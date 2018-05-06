@@ -54,6 +54,8 @@ Al utilizar una regularización l1 con una escala de 0.001 de margen de error, p
 | Segunda ronda     |  0.67   |   0.61    | 0.59        |
 | Basado en primera |  0.48   |   0.59    | 0.58        |
 
+![Sin titulo](images/Modelo Lineal/linealL1-1.JPG)
+
 2) Regularizacion: l1, scale: 0.00001
 
 En este caso se utiliza la regularización l1 con una escala menor 0.00001. Al tener una escala menor, se puede notar que a comparación de las muestras anteriores, la segunda ronda basada en la primera muestra una mejora independientemente de la cantidad de muestras que se utilice.
