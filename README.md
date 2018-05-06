@@ -185,6 +185,7 @@ Al utilizar 10 capas con la función de activación tanh, las predicciones de la
 
 Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segunda ronda y la basada en la primera tienen el mismo comportamiento que las muestras que utilizaron 5 capas extra, esto quiere decir que la cantidad de capas afecta en las predicciones dado que una cantidad alta de las mismas no ayuda a mejorar el resultado de las predicciones a excepción de la primera ronda. 
 
+
 |                   |   100    |   1000     |   5000       |
 |-------------------|----------|-------- ---|--------------|
 | Primera ronda     |  0.35    |   0.28     | 0.251        |
@@ -310,7 +311,7 @@ A la hora de obtener los 10 vecinos más cercanos, se denoto que obtenia un porc
 
 20 vecinos más cercanos con Generar Muestras País
 
-En este caso, se pudo denotar que curiosamente con la primera roneq en cross-validation baja y en la segunda basado con la primera subio. Pero, con las pruebas en ciertos casos sube, mientras que en otros bajan.
+En este caso, se pudo denotar que curiosamente con la primera ronda en cross-validation baja y en la segunda basado con la primera subio. Pero, con las pruebas en ciertos casos sube, mientras que en otros bajan.
 
 1) Cross Validation.
 
