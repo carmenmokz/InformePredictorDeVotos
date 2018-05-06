@@ -248,6 +248,8 @@ A la hora de realizar la comparación entre lo que fue utilizar Cross Validation
 | Segunda ronda     |  0.8    |   0.44    | 0.37       |
 | Basado en primera |  0.8    |   0.44    | 0.37       |
 
+![Sin titulo](images/AD1.jpg)
+
 2) Pruebas
 
 |                   |   100   |   1000    |   10000    |
