@@ -1,7 +1,12 @@
 Predictor De Votaciones
 =====================
-
-**Estudiantes:** Ximena Bolaños, Michael Choque, Carmen Mok
+**Tecnológico de Costa Rica**
+**Curso:** Inteligencia Artificial
+**Estudiantes:** 
+-Ximena Bolaños Fonseca. 2015073844
+-Michael Choque Núñez. 2015018583
+-Carmen Mok Zheng. 2014008258
+**Años:**2018
 
 La clasificación es aquel proceso que nos permite asignar objetos a diferentes categorías predefinidas, un modelo de clasificación intenta extraer alguna conclusión de los valores observados. Dadas una o más entradas al modelo de clasificación, intentaremos predecir el valor de uno o más resultados. Los resultados son etiquetas que se pueden aplicar a un conjunto de datos. Por ejemplo, al filtrar correos electrónicos "spam" o "no spam"
 
@@ -564,6 +569,16 @@ Una vez más los valores de error de entrenamiento se mantienen constantes con u
 ![Sin titulo](images/svm12.png)
 
 No se puede dar una conclusión sobre cuales serian los mejores parametros a usara cuando se tiene un kernel sigmoid. Se nota que en algunas de estas pruebas, el error de entrenamiento logra disminuir mas no se puede asegurar que seguira en disminución con el uso de más muestras pues se nota que llega un punto donde los valores se mantienen iguales.
+
+#Conclusiones Generales
+
+A la hora de utilizar los modelos hay detalles muy importantes que se pudieron denotar en el momento de entrenarlos, como por ejemplo que el KNN con kd-tree es el más lento de todos a la hora de entrenar y predecir. 
+
+Por otro lado, se denoto que los algoritmos que sirven para calcular la pérdida y optimización dependen mucho de que se va a implementar y la única manera en muchos casos de saber cual es el correcto es con prueba y error.
+
+Otro punto importante a la hora de implementar los modelos, es que tan seguro se quiere estar de lo que ocurre en el proceso con estos, ya que por ejemplo en la red neuronal no se puede saber con exactitud que es lo que está sucediendo. 
+
+Finalmente, algo que si se puede rescatar de todos los modelos es que estos fácilitan a la computadora conocer sobre un tema específico de manera que esta misma puede predecir posibles resultados de un conjunto de datos. 
 
 ## Manual de usuario
 
