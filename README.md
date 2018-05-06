@@ -272,7 +272,7 @@ Con un umbral de 0.05 se pudo denotar que que los porcentajes de perdida con cro
 | Segunda ronda     |  0.66   |   0.41    | 0.40      |
 | Basado en primera |  0.66   |   0.41    | 0.40      |
 
-![Sin titulo](images/AD2.jpg)
+![Sin titulo](images/AD9.jpg)
 
 2) Pruebas
 
@@ -282,11 +282,11 @@ Con un umbral de 0.05 se pudo denotar que que los porcentajes de perdida con cro
 | Segunda ronda     |  0.5    |   0.42    | 0.36      |
 | Basado en primera |  0.5    |   0.42    | 0.36      |
 
-![Sin titulo](images/AD9.jpg)
+![Sin titulo](images/AD2.jpg)
 
 Umbral de poda de 3.0
 
-Con un umbral de 0.05 se pudo denotar que que los porcentajes realmente subieron en todos los casos tanto de pruebas como de Cross Validation y Pruebas por lo que posiblemente se podo de más del árbol. 
+Con un umbral de 3.0 se pudo denotar que que los porcentajes realmente subieron en todos los casos tanto de pruebas como de Cross Validation (exceptuando con 10 000) y Pruebas por lo que posiblemente se podo de más del árbol. Entonces, en la mayoría de casos se puede ver que es muy alto el umbral de poda.  
 
 1) Cross Validation
 
