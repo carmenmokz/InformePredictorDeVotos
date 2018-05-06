@@ -46,7 +46,7 @@ Con regularización L1:
 
 1) Regularizacion: l1, scale: 0.001
 
-Al utilizar una regularización l1 con una escala de 0.001 de margen de error, podemos ver que "Accuracy" disminuye al utilzar muestras muy grandes. También se puede observar que los resultados de la segunda ronda aumentan, pero en la segunda ronda basada en la primera, estos disminuyen. 
+Al utilizar una regularización l1 con una escala de 0.001 de margen de error, podemos ver que "Accuracy" disminuye al utilzar muestras muy grandes. También se puede observar que los resultados de la segunda ronda aumentan, pero en la segunda ronda basada en la primera, estos disminuyen.
 
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
@@ -312,6 +312,8 @@ Un gamma bajo, un C bajo y rbf mejoraron ligeramente las predicciones de ronda 1
 | Segunda ronda     | 0.442   |  0.4      | 0.4     | 0.4       |
 | Basado en primera | 0.442   |  0.4      | 0.4     | 0.4       |
 
+![Sin titulo](images/svm2.png)
+
 3) Kernel: rbf, C: 1, Gamma: auto
 
 Al usar un gamma calculado con un algoritmo, un C bajo y rbf se noto que la predicción mejoraba con todas las rondas, lastimosamente los valores de segunda ronda y segunda ronda basado en primera no variaron entre sí por lo que no se ve como los parametros optimos.
@@ -321,6 +323,8 @@ Al usar un gamma calculado con un algoritmo, un C bajo y rbf se noto que la pred
 | Primera ronda     | 0.762   |  0.74     | 0.737   | 0.7294    |
 | Segunda ronda     | 0.432   |  0.3975   | 0.379   | 0.378     |
 | Basado en primera | 0.43    |  0.3975   | 0.379   | 0.378     |
+
+![Sin titulo](images/svm3.png)
 
 4) Kernel: rbf, C: 10, Gamma: 1
 
@@ -332,6 +336,8 @@ Un gamma alto y un C alto con rbf no es una buena combinación para los datos de
 | Segunda ronda     | 0.385   | 0.413     | 0.4192  | 0.422     |
 | Basado en primera | 0.385   | 0.408     | 0.4113  | 0.416     |
 
+![Sin titulo](images/svm4.png)
+
 5) Kernel: rbf, C: 10, Gamma: 0.000000001
 
 Utilizar un C alto y un gamma lo suficientemente bajo con rbf mejora en gran cantidad con muchos valores de predicción como lo fue ronda 1, en cambio con ronda 2 o ronda 2 basado en primera no se nota una muy buena mejora en comparación a usar un algoritmo para calcular gamma.
@@ -342,6 +348,8 @@ Utilizar un C alto y un gamma lo suficientemente bajo con rbf mejora en gran can
 | Segunda ronda     | 0.415   | 0.41      | 0.3964  | 0.384     |
 | Basado en primera | 0.415   | 0.41      | 0.3969  | 0.384     |
 
+![Sin titulo](images/svm5.png)
+
 6) Kernel: rbf, C: 10, Gamma: auto
 
 La utilización de un C alto y un algoritmo que saque Gamma segun la cantidad de propiedades demostro que el predictor mejorara entre más muestras reciba, como se puede notar la diferencia entre hacer la prediccion con 100 muestras y hacerlo con 5000, el error disminuye en más de un 5%. Tambien en estos datos influye el uso del kernel rbf pues con sigmoid no se nota esta mejora, como se vera más adelante.
@@ -351,6 +359,8 @@ La utilización de un C alto y un algoritmo que saque Gamma segun la cantidad de
 | Primera ronda     | 0.78    | 0.76      | 0.7481  | 0.7388    |
 | Segunda ronda     | 0.447   | 0.41      | 0.3953  | 0.387     |
 | Basado en primera | 0.457   | 0.407     | 0.3982  | 0.389     |
+
+![Sin titulo](images/svm6.png)
 
 Con los anteriores parametros se noto que el clasificador mejoraba, pues el error de entrenamiento iba dismiuyendo conforme de usaban más muestras. Los mejores parametros encontrados para este kernel fueron:
 
