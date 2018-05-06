@@ -264,7 +264,7 @@ El modelo trabaja con tres diferentes parametros, el kernel, C y gamma:
 
 Para los kernel en las pruebas de SVM se utilizaran solo rbf y sigmoid. Pero para una mejor comprensión de estos se agrega a continuación las funciones de los respectivos kernel.
 
-sigmoid (\tanh(\gamma \langle x,x'\rangle + r))
+sigmoid ![Sin titulo](images/sigmoid.png)
 
 Kernel: Un kernel es una función de similitud. Se proporciona a un algoritmo de aprendizaje automático el cual toma dos entradas y retorna que tan similares son.
 
