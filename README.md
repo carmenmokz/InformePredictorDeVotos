@@ -34,9 +34,9 @@ Para la clasificación SVM y manejo de los datos se usó principalmente la libre
 
 Este modelo recibirá como parámetro el tipo de regularización que se quiere aplicar en el modelo, las cuales son L1 y L2.
 
-L1: Este se ingresa por medio de la bandera --l1 y es un nivel de regularización provisto por tensorflow que utiliza la técnica "Lasso Regression" que se aplica a los pesos.
+L1: Este se ingresa por medio de la bandera --l1 y es un nivel de regularización provisto por tensorflow que utiliza la técnica "Lasso Regression" que se aplica a los pesos. Se encarga de disminuir el riego de overfitting, o sea el sobreentrenamiento.
 
-L2: Este se ingresa por medio de la bandera --l2 y es un nivel de regularización provisto por tensorflow que utiliza la técnica "Ridge Regression" que se aplica a los pesos.
+L2: Este se ingresa por medio de la bandera --l2 y es un nivel de regularización provisto por tensorflow que utiliza la técnica "Ridge Regression" que se aplica a los pesos. Se encarga de disminuir el riego de overfitting, o sea el sobreentrenamiento.
 
 **Análisis de resultados**
 
@@ -46,31 +46,39 @@ Con regularización L1:
 
 1) Regularizacion: l1, scale: 0.001
 
+Al utilizar una regularización l1 con una escala de 0.001 de margen de error, podemos ver que "Accuracy" disminuye al utilzar muestras muy grandes. También se puede observar que los resultados de la segunda ronda aumentan, pero en la segunda ronda basada en la primera, estos disminuyen. 
+
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
-| Primera ronda     |  0.25   |   0.22    | 0.24        |
-| Segunda ronda     |  0.67   |   0.59    | 0.5955      |
-| Basado en primera |  0.56   |   0.58    | 0.5957      |
+| Primera ronda     |  0.28   |   0.24    | 0.24        |
+| Segunda ronda     |  0.67   |   0.61    | 0.59        |
+| Basado en primera |  0.48   |   0.59    | 0.58        |
 
 2) Regularizacion: l1, scale: 0.00001
+
+En este caso se utiliza la regularización l1 con una escala menor 0.00001. Al tener una escala menor, se puede notar que a comparación de las muestras anteriores, la segunda ronda basada en la primera muestra una mejora independientemente de la cantidad de muestras que se utilice.
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     |  0.23   |   0.25    | 0.25      |
-| Segunda ronda     |  0.71   |   0.57    | 0.58      |
+| Segunda ronda     |  0.62   |   0.57    | 0.58      |
 | Basado en primera |  0.67   |   0.58    | 0.59      |
 
 3) Regularizacion: l1, scale: 0.0000001
 
+Al utilizar una escala aún mpas pequeña, este afectó de nuevo a la segunda ronda basada en la primera, por lo que se puede decir que da un mejor resultado al no utilizar una escala demasiado pequeña o demasiado grande.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
-| Primera ronda     |  0.225  |   0.25    | 0.23      |
-| Segunda ronda     |  0.712  |   0.58    | 0.60      |
-| Basado en primera |  0.575  |   0.57    | 0.58      |
+| Primera ronda     |  0.27   |   0.23    | 0.25      |
+| Segunda ronda     |  0.55   |   0.62    | 0.59      |
+| Basado en primera |  0.6    |   0.59    | 0.58      |
 
 Con regularización L2::
 
 1) Regularizacion: l2, scale: 0.001
+
+Al utilizar el regularizador l2 con una escala de 0.001, los resultados no varían mucho con los resultados utilizando la regularización l1 en las muestras anteriores. Además podemos notar que el uso de una muestra más grande no mejora el resultado del "Accuracy".
 
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
@@ -80,6 +88,8 @@ Con regularización L2::
 
 2) Regularizacion: l2, scale: 0.00001
 
+Al igual que con la regularización l1 con una escala de 0.00001, se puede ver que hubo una mejora en las muestras de la segunda ronda y la segunda ronda basada en la primera.
+
 |                   |   100   |   1000     |   5000     |
 |-------------------|---------|------------|------------|
 | Primera ronda     |  0.275  |   0.262    | 0.237      |
@@ -88,11 +98,15 @@ Con regularización L2::
 
 3) Regularizacion: l2, scale: 0.0000001
 
-|                   |   100   |   1000     |   5000    |
-|-------------------|---------|------------|-----------|
+Al utilizar una escala muy baja como 0.0000001, podemos ver que tampoco hubo una mejora en la segunda ronda basada en la primera ronda aunque se haya utilizado la regularización l2.
+
+|                   |   100   |   1000     |   5000     |
+|-------------------|---------|------------|------------|
 | Primera ronda     |  0.262  |   0.237    | 0.249      |
 | Segunda ronda     |  0.612  |   0.616    | 0.596      |
 | Basado en primera |  0.562  |   0.603    | 0.591      |
+
+Podemos decir que lo que más afecta el resultado de la predicción mediante un modelo lineal es la escala que se utiliza en la regularizaciones, ya que sin la aplicación de este, puede no haber una mejora en los resultados.
 
 ### Redes neuronales
 
