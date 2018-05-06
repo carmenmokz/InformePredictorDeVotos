@@ -94,6 +94,8 @@ Al utilizar el regularizador l2 con una escala de 0.001, los resultados no varí
 | Segunda ronda     |  0.67   |   0.59    | 0.5955      |
 | Basado en primera |  0.56   |   0.58    | 0.5957      |
 
+![Sin titulo](images/linealL2-1.PNG)
+
 2) Regularizacion: l2, scale: 0.00001
 
 Al igual que con la regularización l1 con una escala de 0.00001, se puede ver que hubo una mejora en las muestras de la segunda ronda y la segunda ronda basada en la primera.
@@ -104,6 +106,8 @@ Al igual que con la regularización l1 con una escala de 0.00001, se puede ver q
 | Segunda ronda     |  0.512  |   0.582    | 0.591      |
 | Basado en primera |  0.575  |   0.612    | 0.595      |
 
+![Sin titulo](images/linealL2-2.PNG)
+
 3) Regularizacion: l2, scale: 0.0000001
 
 Al utilizar una escala muy baja como 0.0000001, podemos ver que tampoco hubo una mejora en la segunda ronda basada en la primera ronda aunque se haya utilizado la regularización l2.
@@ -113,6 +117,8 @@ Al utilizar una escala muy baja como 0.0000001, podemos ver que tampoco hubo una
 | Primera ronda     |  0.262  |   0.237    | 0.249      |
 | Segunda ronda     |  0.612  |   0.616    | 0.596      |
 | Basado en primera |  0.562  |   0.603    | 0.591      |
+
+![Sin titulo](images/linealL2-3.PNG)
 
 Podemos decir que lo que más afecta el resultado de la predicción mediante un modelo lineal es la escala que se utiliza en la regularizaciones, ya que sin la aplicación de este, puede no haber una mejora en los resultados.
 
@@ -144,6 +150,8 @@ Al utilizar la función de activación sigmoid y 5 capaz más o "hidden layers",
 | Segunda ronda     |  0.50   |   0.56    | 0.57        |
 | Basado en primera |  0.60   |   0.59    | 0.61        |
 
+![Sin titulo](images/redSigmoid 1.PNG)
+
 2) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'sigmoid'
 
 Al utilizar un poco más de capas, podemos notar que las predicciones de las rondas mejoras, pero en este caso no hay mucha diferencia en los resultados utilizando 1000 muestras y 5000 muestras.
@@ -154,6 +162,8 @@ Al utilizar un poco más de capas, podemos notar que las predicciones de las ron
 | Segunda ronda     |  0.45   |   0.59    | 0.59        |
 | Basado en primera |  0.55   |   0.58    | 0.62        |
 
+![Sin titulo](images/redSigmoid 2.PNG)
+
 3) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'sigmoid'
 
 Aqui se puede notar que la cantidad de capas afecta, la implementación de más capaz en una red neuronal no siginifica que la predicción va a tener una mejora. Como podemos ver, la segunda ronda basada en la primera obtuvo una predicción mpas baja al utilizar 20 capas a comparación de las muestras anteriores.
@@ -163,6 +173,8 @@ Aqui se puede notar que la cantidad de capas afecta, la implementación de más 
 | Primera ronda     |  0.22   |   0.25    | 0.23        |
 | Segunda ronda     |  0.71   |   0.58    | 0.60        |
 | Basado en primera |  0.57   |   0.57    | 0.58        |
+
+![Sin titulo](images/redSigmoid 3.PNG)
 
 Se puede observar que la cantidad de capas puede afectar el "accuracy" de la clasificación por el modelo de redes neuronales.
 
@@ -179,6 +191,8 @@ En este caso al utilizar la función de activación tanh con 5 capas agregadas, 
 | Segunda ronda     |  0.70   |   0.59    | 0.596        |
 | Basado en primera |  0.75   |   0.60    | 0.591        |
 
+![Sin titulo](images/redTanh 1.PNG)
+
 2) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'tanh'
 
 Al utilizar 10 capas con la función de activación tanh, las predicciones de la primera ronda se mantienen con un resultado similar que la muestra anterior. Además podemos notar que las predicciones de las rondas bajaron a comparación de las muestras que utilizaron 5 capas.
@@ -188,6 +202,8 @@ Al utilizar 10 capas con la función de activación tanh, las predicciones de la
 | Primera ronda     |  0.15   |   0.22    | 0.228        |
 | Segunda ronda     |  0.35   |   0.57    | 0.589        |
 | Basado en primera |  0.65   |   0.62    | 0.595        |
+
+![Sin titulo](images/redTanh 2.PNG)
 
 3) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'tanh'
 
@@ -199,6 +215,8 @@ Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segu
 | Primera ronda     |  0.35   |   0.28    | 0.251        |
 | Segunda ronda     |  0.70   |   0.565    | 0.605        |
 | Basado en primera |  0.70   |   0.605    | 0.60        |
+
+![Sin titulo](images/redTanh 3.PNG)
 
 Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid, por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
 
