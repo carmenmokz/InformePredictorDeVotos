@@ -337,6 +337,8 @@ A la hora de obtener los 10 vecinos más cercanos, se denoto que obtenia un porc
 | Segunda ronda     |  0.3    |   0.47    |            
 | Basado en primera |  0.3    |   0.34    |            
 
+![Sin titulo](images/KNN5.jpg)
+
 2) Pruebas
 
 |                   |   100   |   1000    |   
@@ -345,6 +347,7 @@ A la hora de obtener los 10 vecinos más cercanos, se denoto que obtenia un porc
 | Segunda ronda     |  0.55   |   0.45    |            
 | Basado en primera |  0.6    |   0.44    |            
 
+![Sin titulo](images/KNN10.jpg)
 
 20 vecinos más cercanos con Generar Muestras País
 
@@ -358,13 +361,17 @@ En este caso, se pudo denotar que curiosamente con la primera ronda en cross-val
 | Segunda ronda     |  0.46    |   0.44    |            
 | Basado en primera |  0.46    |   0.44    |            
 
+![Sin titulo](images/KNN7.jpg)
+
 2) Pruebas
 
 |                   |   100   |   1000    |        
 |-------------------|---------|-----------|
 | Primera ronda     |  0.85   |   0.86    |            
 | Segunda ronda     |  0.35   |   0.52    |            
-| Basado en primera |  0.44   |   0.50    |            
+| Basado en primera |  0.44   |   0.50    |       
+
+![Sin titulo](images/KNN6.jpg)     
 
 Datos Curiosos:
 - A la hora de seleccionar los vecinos más cercanos pueden cambiar mucho si se utilizan muy pocos como por ejemplo 3 o si se utilizan más de 20. Por lo que el porcentaje de error se puede ver afectado. 
