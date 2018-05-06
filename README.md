@@ -6,9 +6,11 @@ Predictor De Votaciones
 
 **Estudiantes:** 
 
--Ximena Bolaños Fonseca. 2015073844
--Michael Choque Núñez. 2015018583
--Carmen Mok Zheng. 2014008258
+- Ximena Bolaños Fonseca. 2015073844
+
+- Michael Choque Núñez. 2015018583
+
+- Carmen Mok Zheng. 2014008258
 
 **Año:** 2018
 
