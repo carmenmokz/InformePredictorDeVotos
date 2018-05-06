@@ -55,7 +55,7 @@ Al utilizar una regularización l1 con una escala de 0.001 de margen de error, p
 | Basado en primera |  0.48   |   0.59    | 0.58        |
 
 
-![Sin titulo](images/linealL1-1.JPG)
+![Sin titulo](images/linealL1-1.PNG)
 
 
 2) Regularizacion: l1, scale: 0.00001
