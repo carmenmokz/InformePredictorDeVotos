@@ -258,6 +258,8 @@ A la hora de realizar la comparación entre lo que fue utilizar Cross Validation
 | Segunda ronda     |  0.55   |   0.35    | 0.367      |
 | Basado en primera |  0.55   |   0.35    | 0.367      |
 
+![Sin titulo](images/AD8.jpg)
+
 Umbral de poda de 0.05 en Generador de Muestras Pais. 
 
 Con un umbral de 0.05 se pudo denotar que que los porcentajes de perdida con cross validation subieron pero que con las pruebas bajaron en algunos casos, mientras que en otros se mantuvieron. 
@@ -270,6 +272,8 @@ Con un umbral de 0.05 se pudo denotar que que los porcentajes de perdida con cro
 | Segunda ronda     |  0.66   |   0.41    | 0.40      |
 | Basado en primera |  0.66   |   0.41    | 0.40      |
 
+![Sin titulo](images/AD2.jpg)
+
 2) Pruebas
 
 |                   |   100   |   1000    |   10000   |
@@ -277,6 +281,8 @@ Con un umbral de 0.05 se pudo denotar que que los porcentajes de perdida con cro
 | Primera ronda     |  0.75   |   0.775   | 0.73      |
 | Segunda ronda     |  0.5    |   0.42    | 0.36      |
 | Basado en primera |  0.5    |   0.42    | 0.36      |
+
+![Sin titulo](images/AD9.jpg)
 
 Umbral de poda de 3.0
 
@@ -290,6 +296,8 @@ Con un umbral de 0.05 se pudo denotar que que los porcentajes realmente subieron
 | Segunda ronda     |  0.66   |   0.43    | 0.37      |
 | Basado en primera |  0.66   |   0.43    | 0.37      |
 
+![Sin titulo](images/AD3.jpg)
+
 2) Pruebas
 
 |                   |   100   |   1000    |   10000   |
@@ -298,6 +306,7 @@ Con un umbral de 0.05 se pudo denotar que que los porcentajes realmente subieron
 | Segunda ronda     |  0.55   |   0.47    | 0.38      |
 | Basado en primera |  0.55   |   0.47    | 0.38      |
 
+![Sin titulo](images/AD4.jpg)
 
 Datos Curiosos:
 
