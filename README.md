@@ -7,12 +7,10 @@ Predictor De Votaciones
 **Estudiantes:** 
 
 -Ximena Bolaños Fonseca. 2015073844
-
 -Michael Choque Núñez. 2015018583
-
 -Carmen Mok Zheng. 2014008258
 
-**Año:**2018
+**Año:** 2018
 
 La clasificación es aquel proceso que nos permite asignar objetos a diferentes categorías predefinidas, un modelo de clasificación intenta extraer alguna conclusión de los valores observados. Dadas una o más entradas al modelo de clasificación, intentaremos predecir el valor de uno o más resultados. Los resultados son etiquetas que se pueden aplicar a un conjunto de datos. Por ejemplo, al filtrar correos electrónicos "spam" o "no spam"
 
