@@ -186,11 +186,11 @@ Al utilizar 10 capas con la función de activación tanh, las predicciones de la
 Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segunda ronda y la basada en la primera tienen el mismo comportamiento que las muestras que utilizaron 5 capas extra, esto quiere decir que la cantidad de capas afecta en las predicciones dado que una cantidad alta de las mismas no ayuda a mejorar el resultado de las predicciones a excepción de la primera ronda. 
 
 
-|                   |   100    |   1000     |   5000       |
-|-------------------|----------|-------- ---|--------------|
-| Primera ronda     |  0.35    |   0.28     | 0.251        |
-| Segunda ronda     |  0.70    |   0.565    | 0.605        |
-| Basado en primera |  0.70    |   0.605    | 0.60         |
+|                   |   100   |   1000    |   5000       |
+|-------------------|---------|-----------|--------------|
+| Primera ronda     |  0.35   |   0.28    | 0.251        |
+| Segunda ronda     |  0.70   |   0.565    | 0.605        |
+| Basado en primera |  0.70   |   0.605    | 0.60        |
 
 Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid, por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
 
