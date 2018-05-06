@@ -132,7 +132,7 @@ layers: Define la cantidad de capas que se quiere agregar al modelo de la red ne
 
 unit_per_layer: Establece las unidades que se le quiere asignar a cada capa agregada anteriormente para asignarle la dimensionalidad del espacio de salida de la capa.
 
-activation_func: Esta es la función de activación que se quiere utilizar en las capaz agregadas, este puede ser 'relu', 'sigmoid' o 'tanh'.
+activation_func: Esta es la función de activación que se quiere utilizar en las capas agregadas, el cual mapea los valores resultantes entre un rango de 0 a 1, -1 a 1, entre otros. Este puede ser 'relu', 'sigmoid' o 'tanh'. 
 
 **Análisis de resultados**
 
@@ -218,7 +218,7 @@ Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segu
 
 ![Sin titulo](images/redTanh3.PNG)
 
-Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid, por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
+Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid debido a que su rango de mapeo de los valores (Sigmoid = 0 a 1, Tanh = -1 a 1), por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
 
 ### Árboles de decisión
 
