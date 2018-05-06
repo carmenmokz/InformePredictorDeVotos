@@ -276,10 +276,6 @@ Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000
 
 El modelo trabaja con tres diferentes parametros, el kernel, C y gamma:
 
-Para los kernel en las pruebas de SVM se utilizaran solo rbf y sigmoid. Pero para una mejor comprensión de estos se agrega a continuación las funciones de los respectivos kernel.
-
-sigmoid ![Sin titulo](images/sigmoid.png)
-
 Kernel: Un kernel es una función de similitud. Se proporciona a un algoritmo de aprendizaje automático el cual toma dos entradas y retorna que tan similares son.
 
 C: Intercambia errores de clasificación de ejemplos de entrenamiento contra la simplicidad de la superficie de decisión. Una C baja hace que la superficie de decisión sea suave, mientras que una C alta tiene como objetivo clasificar correctamente todos los ejemplos de entrenamiento. En otras palabras C define cuánto se quiere evitar clasificar erróneamente cada ejemplo.
@@ -303,6 +299,8 @@ Esto son los parametros que por defecto un SVM va a manejar, se puede ver que el
 | Primera ronda     |  0.772  |   0.77    | 0.761   | 0.73      |
 | Segunda ronda     |  0.444  |   0.41    | 0.42    | 0.41      |
 | Basado en primera |  0.445  |   0.39    | 0.41    | 0.40      |
+
+![Sin titulo](images/svm1.png)
 
 2) Kernel: rbf, C: 1, Gamma: 0.000000001
 
@@ -365,7 +363,7 @@ Pruebas (sigmoid):
 
 1) Kernel: sigmoid, C: 1, Gamma: 1
 
-
+Estos son los parametros que por defecto SVM va a manejar con sigmoid, como se puede notar no se logra una mejor predicción entre más muestras se le pasen al clasificador. Aun asi se noto que existe cierta mejora con los datos de segunda ronda y segunda ronda basado en primera (aunque no muy sgnificativo).
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
@@ -375,6 +373,8 @@ Pruebas (sigmoid):
 
 2) Kernel: sigmoid, C: 1, Gamma: 0.000000001
 
+Se penso que al igual que con rbf, sigmoid mejoraria con un gamma bajo, pero al final se noto que en lugar de mejorar empeoraba. Por lo que se concluye que sigmoid no trabaja bien entre más propiedades tengan los datos.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     | 0.783   | 0.806     | 0.803     |
@@ -382,6 +382,8 @@ Pruebas (sigmoid):
 | Basado en primera | 0.433   | 0.489     | 0.485     |
 
 3) Kernel: sigmoid, C: 1, Gamma: auto
+
+A pesar de que mejora con un algritmo para gamma, se nota que el error de entrenamiento no variara tanto entre más muestras se tengan. Por lo que se puede concluir lo mismo que con la prueba anterior.
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
@@ -391,6 +393,8 @@ Pruebas (sigmoid):
 
 4) Kernel: sigmoid, C: 10, Gamma: 1
 
+Una vez más, el error de entrenamiento se mantienen constante sin importar la cantidad de muestras usadas. Con esta muestra se concluye que aun si se quiere tratar de mejorar el error en las muestras de prueba, con sigmoid el error de entrenamiento no variara mucho.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     | 0.775   | 0.757     | 0.755     |
@@ -398,6 +402,8 @@ Pruebas (sigmoid):
 | Basado en primera | 0.398   | 0.409     | 0.3937    |
 
 5) Kernel: sigmoid, C: 10, Gamma: 0.000000001
+
+Se esperaba que al igual que con rbf, sigmoid mostrara buenos resultados con estos parametros, pero no fue asi. Los valores de error de entrenamiento dado por sigmoid en esta prueba resultaron ser muy constantes pero tambien muy altos por lo que no se recomienda usar valores de C alto ni de Gamma bajos.
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
@@ -407,11 +413,15 @@ Pruebas (sigmoid):
 
 6) Kernel: sigmoid, C: 10, Gamma: auto
 
+Una vez más los valores de error de entrenamiento se mantienen constantes con un gamma calculado con una función.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     | 0.772   | 0.75      | 0.757     |
 | Segunda ronda     | 0.428   | 0.408     | 0.4       |
 | Basado en primera | 0.428   | 0.408     | 0.4       |
+
+No se puede dar una conclusión sobre cuales serian los mejores parametros a usara cuando se tiene un kernel sigmoid. Se nota que en algunas de estas pruebas, el error de entrenamiento logra disminuir mas no se puede asegurar que seguira en disminución con el uso de más muestras pues se nota que llega un punto donde los valores se mantienen iguales.
 
 ## Manual de usuario
 
