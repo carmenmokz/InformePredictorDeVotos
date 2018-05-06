@@ -122,7 +122,7 @@ activation_func: Esta es la función de activación que se quiere utilizar en la
 
 **Análisis de resultados**
 
-Para el análisis del modelo de Red Neuronal se utilizarán muestras de tamaño 100, 1000 y 5000. Esto guardará un veinte por ciento de las muestras generadas para realizar la prueba final. A cada muestra se le agregará una cantidad de capas de 5, 10 y 20, además de las unidades para cada capa con números aleatorios y una función de activación utilizando 'sigmoid'.
+Para el análisis del modelo de Red Neuronal se utilizarán muestras de tamaño 100, 1000 y 5000. Esto guardará un veinte por ciento de las muestras generadas para realizar la prueba final. A cada muestra se le agregará una cantidad de capas de 5, 10 y 20, además de las unidades para cada capa con números aleatorios y una función de activación utilizando 'sigmoid' y 'tanh'.
 
 Utilizando función de activación Sigmoid:
 
@@ -136,7 +136,7 @@ Al utilizar la función de activación sigmoid y 5 capaz más o "hidden layers",
 | Segunda ronda     |  0.50   |   0.56    | 0.57        |
 | Basado en primera |  0.60   |   0.59    | 0.61        |
 
-1) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'sigmoid'
+2) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'sigmoid'
 
 Al utilizar un poco más de capas, podemos notar que las predicciones de las rondas mejoras, pero en este caso no hay mucha diferencia en los resultados utilizando 1000 muestras y 5000 muestras.
 
@@ -146,7 +146,7 @@ Al utilizar un poco más de capas, podemos notar que las predicciones de las ron
 | Segunda ronda     |  0.45   |   0.59    | 0.59        |
 | Basado en primera |  0.55   |   0.58    | 0.62        |
 
-1) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'sigmoid'
+3) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'sigmoid'
 
 Aqui se puede notar que la cantidad de capas afecta, la implementación de más capaz en una red neuronal no siginifica que la predicción va a tener una mejora. Como podemos ver, la segunda ronda basada en la primera obtuvo una predicción mpas baja al utilizar 20 capas a comparación de las muestras anteriores.
 
@@ -157,6 +157,41 @@ Aqui se puede notar que la cantidad de capas afecta, la implementación de más 
 | Basado en primera |  0.57   |   0.57    | 0.58        |
 
 Se puede observar que la cantidad de capas puede afectar el "accuracy" de la clasificación por el modelo de redes neuronales.
+
+
+Utilizando función de activación Tanh:
+
+1) layers: 5, unit_per_layer: [10,15,20,25,27], activation_func: 'tanh'
+
+En este caso al utilizar la función de activación tanh con 5 capas agregadas, podemos ver que las predicciones con más muestras bajan a comparación de las muestras más pequeñas, además la predicción de la segunda ronda y la segunda ronda basada en la primera ronda son muy similares.
+
+|                   |   100   |   1000    |   5000       |
+|-------------------|---------|-----------|--------------|
+| Primera ronda     |  0.15   |   0.20    | 0.234        |
+| Segunda ronda     |  0.70   |   0.59    | 0.596        |
+| Basado en primera |  0.75   |   0.60    | 0.591        |
+
+2) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'tanh'
+
+Al utilizar 10 capas con la función de activación tanh, las predicciones de la primera ronda se mantienen con un resultado similar que la muestra anterior. Además podemos notar que las predicciones de las rondas bajaron a comparación de las muestras que utilizaron 5 capas.
+
+|                   |   100   |   1000    |   5000       |
+|-------------------|---------|-----------|--------------|
+| Primera ronda     |  0.15   |   0.22    | 0.228        |
+| Segunda ronda     |  0.35   |   0.57    | 0.589        |
+| Basado en primera |  0.65   |   0.62    | 0.595        |
+
+3) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'tanh'
+
+Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segunda ronda y la basada en la primera tienen el mismo comportamiento que las muestras que utilizaron 5 capas extra, esto quiere decir que la cantidad de capas afecta en las predicciones dado que una cantidad alta de las mismas no ayuda a mejorar el resultado de las predicciones a excepción de la primera ronda. 
+
+|                   |   100    |   1000     |   5000       |
+|-------------------|----------|-------- ---|--------------|
+| Primera ronda     |  0.35    |   0.28     | 0.251        |
+| Segunda ronda     |  0.70    |   0.565    | 0.605        |
+| Basado en primera |  0.70    |   0.605    | 0.60         |
+
+Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid, por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
 
 ### Árboles de decisión
 
