@@ -46,7 +46,7 @@ Con regularización L1:
 
 1) Regularizacion: l1, scale: 0.001
 
-Al utilizar una regularización l1 con una escala de 0.001 de margen de error, podemos ver que "Accuracy" disminuye al utilzar muestras muy grandes. También se puede observar que los resultados de la segunda ronda aumentan, pero en la segunda ronda basada en la primera, estos disminuyen. 
+Al utilizar una regularización l1 con una escala de 0.001 de margen de error, podemos ver que "Accuracy" disminuye al utilzar muestras muy grandes. También se puede observar que los resultados de la segunda ronda aumentan, pero en la segunda ronda basada en la primera, estos disminuyen.
 
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
@@ -282,10 +282,6 @@ Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000
 
 El modelo trabaja con tres diferentes parametros, el kernel, C y gamma:
 
-Para los kernel en las pruebas de SVM se utilizaran solo rbf y sigmoid. Pero para una mejor comprensión de estos se agrega a continuación las funciones de los respectivos kernel.
-
-sigmoid ![Sin titulo](images/sigmoid.png)
-
 Kernel: Un kernel es una función de similitud. Se proporciona a un algoritmo de aprendizaje automático el cual toma dos entradas y retorna que tan similares son.
 
 C: Intercambia errores de clasificación de ejemplos de entrenamiento contra la simplicidad de la superficie de decisión. Una C baja hace que la superficie de decisión sea suave, mientras que una C alta tiene como objetivo clasificar correctamente todos los ejemplos de entrenamiento. En otras palabras C define cuánto se quiere evitar clasificar erróneamente cada ejemplo.
@@ -310,6 +306,8 @@ Esto son los parametros que por defecto un SVM va a manejar, se puede ver que el
 | Segunda ronda     |  0.444  |   0.41    | 0.42    | 0.41      |
 | Basado en primera |  0.445  |   0.39    | 0.41    | 0.40      |
 
+![Sin titulo](images/svm1.png)
+
 2) Kernel: rbf, C: 1, Gamma: 0.000000001
 
 Un gamma bajo, un C bajo y rbf mejoraron ligeramente las predicciones de ronda 1, pero con las demás no se vio una mejora significativa.
@@ -319,6 +317,8 @@ Un gamma bajo, un C bajo y rbf mejoraron ligeramente las predicciones de ronda 1
 | Primera ronda     | 0.792   |  0.766    | 0.75    | 0.7448    |
 | Segunda ronda     | 0.442   |  0.4      | 0.4     | 0.4       |
 | Basado en primera | 0.442   |  0.4      | 0.4     | 0.4       |
+
+![Sin titulo](images/svm2.png)
 
 3) Kernel: rbf, C: 1, Gamma: auto
 
@@ -330,6 +330,8 @@ Al usar un gamma calculado con un algoritmo, un C bajo y rbf se noto que la pred
 | Segunda ronda     | 0.432   |  0.3975   | 0.379   | 0.378     |
 | Basado en primera | 0.43    |  0.3975   | 0.379   | 0.378     |
 
+![Sin titulo](images/svm3.png)
+
 4) Kernel: rbf, C: 10, Gamma: 1
 
 Un gamma alto y un C alto con rbf no es una buena combinación para los datos de segunda ronda, más que todo porque un gamma alto con muchas propiedades hace que las predicciones no sean tan buenas, por otra parte nos permitio ver diferentes resultados en ronda 2 y ronda 2 basado en primera, ya que normalmente estas terminan predicciendo lo mismo.
@@ -339,6 +341,8 @@ Un gamma alto y un C alto con rbf no es una buena combinación para los datos de
 | Primera ronda     | 0.792   | 0.743     | 0.76    | 0.7638    |
 | Segunda ronda     | 0.385   | 0.413     | 0.4192  | 0.422     |
 | Basado en primera | 0.385   | 0.408     | 0.4113  | 0.416     |
+
+![Sin titulo](images/svm4.png)
 
 5) Kernel: rbf, C: 10, Gamma: 0.000000001
 
@@ -350,6 +354,8 @@ Utilizar un C alto y un gamma lo suficientemente bajo con rbf mejora en gran can
 | Segunda ronda     | 0.415   | 0.41      | 0.3964  | 0.384     |
 | Basado en primera | 0.415   | 0.41      | 0.3969  | 0.384     |
 
+![Sin titulo](images/svm5.png)
+
 6) Kernel: rbf, C: 10, Gamma: auto
 
 La utilización de un C alto y un algoritmo que saque Gamma segun la cantidad de propiedades demostro que el predictor mejorara entre más muestras reciba, como se puede notar la diferencia entre hacer la prediccion con 100 muestras y hacerlo con 5000, el error disminuye en más de un 5%. Tambien en estos datos influye el uso del kernel rbf pues con sigmoid no se nota esta mejora, como se vera más adelante.
@@ -359,6 +365,8 @@ La utilización de un C alto y un algoritmo que saque Gamma segun la cantidad de
 | Primera ronda     | 0.78    | 0.76      | 0.7481  | 0.7388    |
 | Segunda ronda     | 0.447   | 0.41      | 0.3953  | 0.387     |
 | Basado en primera | 0.457   | 0.407     | 0.3982  | 0.389     |
+
+![Sin titulo](images/svm6.png)
 
 Con los anteriores parametros se noto que el clasificador mejoraba, pues el error de entrenamiento iba dismiuyendo conforme de usaban más muestras. Los mejores parametros encontrados para este kernel fueron:
 
@@ -371,7 +379,7 @@ Pruebas (sigmoid):
 
 1) Kernel: sigmoid, C: 1, Gamma: 1
 
-
+Estos son los parametros que por defecto SVM va a manejar con sigmoid, como se puede notar no se logra una mejor predicción entre más muestras se le pasen al clasificador. Aun asi se noto que existe cierta mejora con los datos de segunda ronda y segunda ronda basado en primera (aunque no muy sgnificativo).
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
@@ -381,6 +389,8 @@ Pruebas (sigmoid):
 
 2) Kernel: sigmoid, C: 1, Gamma: 0.000000001
 
+Se penso que al igual que con rbf, sigmoid mejoraria con un gamma bajo, pero al final se noto que en lugar de mejorar empeoraba. Por lo que se concluye que sigmoid no trabaja bien entre más propiedades tengan los datos.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     | 0.783   | 0.806     | 0.803     |
@@ -388,6 +398,8 @@ Pruebas (sigmoid):
 | Basado en primera | 0.433   | 0.489     | 0.485     |
 
 3) Kernel: sigmoid, C: 1, Gamma: auto
+
+A pesar de que mejora con un algritmo para gamma, se nota que el error de entrenamiento no variara tanto entre más muestras se tengan. Por lo que se puede concluir lo mismo que con la prueba anterior.
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
@@ -397,6 +409,8 @@ Pruebas (sigmoid):
 
 4) Kernel: sigmoid, C: 10, Gamma: 1
 
+Una vez más, el error de entrenamiento se mantienen constante sin importar la cantidad de muestras usadas. Con esta muestra se concluye que aun si se quiere tratar de mejorar el error en las muestras de prueba, con sigmoid el error de entrenamiento no variara mucho.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     | 0.775   | 0.757     | 0.755     |
@@ -404,6 +418,8 @@ Pruebas (sigmoid):
 | Basado en primera | 0.398   | 0.409     | 0.3937    |
 
 5) Kernel: sigmoid, C: 10, Gamma: 0.000000001
+
+Se esperaba que al igual que con rbf, sigmoid mostrara buenos resultados con estos parametros, pero no fue asi. Los valores de error de entrenamiento dado por sigmoid en esta prueba resultaron ser muy constantes pero tambien muy altos por lo que no se recomienda usar valores de C alto ni de Gamma bajos.
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
@@ -413,11 +429,15 @@ Pruebas (sigmoid):
 
 6) Kernel: sigmoid, C: 10, Gamma: auto
 
+Una vez más los valores de error de entrenamiento se mantienen constantes con un gamma calculado con una función.
+
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
 | Primera ronda     | 0.772   | 0.75      | 0.757     |
 | Segunda ronda     | 0.428   | 0.408     | 0.4       |
 | Basado en primera | 0.428   | 0.408     | 0.4       |
+
+No se puede dar una conclusión sobre cuales serian los mejores parametros a usara cuando se tiene un kernel sigmoid. Se nota que en algunas de estas pruebas, el error de entrenamiento logra disminuir mas no se puede asegurar que seguira en disminución con el uso de más muestras pues se nota que llega un punto donde los valores se mantienen iguales.
 
 ## Manual de usuario
 
