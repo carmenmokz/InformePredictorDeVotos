@@ -150,7 +150,7 @@ Al utilizar la función de activación sigmoid y 5 capaz más o "hidden layers",
 | Segunda ronda     |  0.50   |   0.56    | 0.57        |
 | Basado en primera |  0.60   |   0.59    | 0.61        |
 
-![Sin titulo](images/redSigmoid 1.PNG)
+![Sin titulo](images/redSigmoid1.PNG)
 
 2) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'sigmoid'
 
@@ -162,7 +162,7 @@ Al utilizar un poco más de capas, podemos notar que las predicciones de las ron
 | Segunda ronda     |  0.45   |   0.59    | 0.59        |
 | Basado en primera |  0.55   |   0.58    | 0.62        |
 
-![Sin titulo](images/redSigmoid 2.PNG)
+![Sin titulo](images/redSigmoid2.PNG)
 
 3) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'sigmoid'
 
@@ -174,7 +174,7 @@ Aqui se puede notar que la cantidad de capas afecta, la implementación de más 
 | Segunda ronda     |  0.71   |   0.58    | 0.60        |
 | Basado en primera |  0.57   |   0.57    | 0.58        |
 
-![Sin titulo](images/redSigmoid 3.PNG)
+![Sin titulo](images/redSigmoid3.PNG)
 
 Se puede observar que la cantidad de capas puede afectar el "accuracy" de la clasificación por el modelo de redes neuronales.
 
@@ -191,7 +191,7 @@ En este caso al utilizar la función de activación tanh con 5 capas agregadas, 
 | Segunda ronda     |  0.70   |   0.59    | 0.596        |
 | Basado en primera |  0.75   |   0.60    | 0.591        |
 
-![Sin titulo](images/redTanh 1.PNG)
+![Sin titulo](images/redTanh1.PNG)
 
 2) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'tanh'
 
@@ -203,7 +203,7 @@ Al utilizar 10 capas con la función de activación tanh, las predicciones de la
 | Segunda ronda     |  0.35   |   0.57    | 0.589        |
 | Basado en primera |  0.65   |   0.62    | 0.595        |
 
-![Sin titulo](images/redTanh 2.PNG)
+![Sin titulo](images/redTanh2.PNG)
 
 3) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'tanh'
 
@@ -216,7 +216,7 @@ Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segu
 | Segunda ronda     |  0.70   |   0.565    | 0.605        |
 | Basado en primera |  0.70   |   0.605    | 0.60        |
 
-![Sin titulo](images/redTanh 3.PNG)
+![Sin titulo](images/redTanh3.PNG)
 
 Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid, por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
 
