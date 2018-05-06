@@ -262,6 +262,10 @@ Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000
 
 El modelo trabaja con tres diferentes parametros, el kernel, C y gamma:
 
+Para los kernel en las pruebas de SVM se utilizaran solo rbf y sigmoid. Pero para una mejor comprensión de estos se agrega a continuación las funciones de los respectivos kernel.
+
+sigmoid (\tanh(\gamma \langle x,x'\rangle + r))
+
 Kernel: Un kernel es una función de similitud. Se proporciona a un algoritmo de aprendizaje automático el cual toma dos entradas y retorna que tan similares son.
 
 C: Intercambia errores de clasificación de ejemplos de entrenamiento contra la simplicidad de la superficie de decisión. Una C baja hace que la superficie de decisión sea suave, mientras que una C alta tiene como objetivo clasificar correctamente todos los ejemplos de entrenamiento. En otras palabras C define cuánto se quiere evitar clasificar erróneamente cada ejemplo.
@@ -277,6 +281,8 @@ Cada prueba muestra el error de entrenamiento (ER) promedio del modelo luego de 
 Pruebas (rbf):
 
 1) Kernel: rbf, C: 1, Gamma: 1
+
+Esto son los parametros que por defecto un SVM va a manejar, se puede ver que el error de entrenamiento no empieza a disminuir significativamente si no hasta despues de 5000 ejemplos, por lo que si se buscase predecir bien con pocos ejemplos no es la mejor prática dejar los parametros como los predefinidos por SVM.
 
 |                   |   100   |   1000    | 2500    |   5000    |
 |-------------------|---------|-----------|---------|-----------|
@@ -334,11 +340,18 @@ La utilización de un C alto y un algoritmo que saque Gamma segun la cantidad de
 | Segunda ronda     | 0.447   | 0.41      | 0.3953  | 0.387     |
 | Basado en primera | 0.457   | 0.407     | 0.3982  | 0.389     |
 
-Con los anteriores parametros se noto que el clasificador mejoraba, pues el error de entrenamiento iba dismiuyendo conforme de usaban más muestras.
+Con los anteriores parametros se noto que el clasificador mejoraba, pues el error de entrenamiento iba dismiuyendo conforme de usaban más muestras. Los mejores parametros encontrados para este kernel fueron:
+
+C: 1, Gamma: auto
+C: 10, Gamma: 0.000000001
+
+Pues fueron los que dieron el mejor resultado posible de entre las pruebas.
 
 Pruebas (sigmoid):
 
 1) Kernel: sigmoid, C: 1, Gamma: 1
+
+
 
 |                   |   100   |   1000    |   5000    |
 |-------------------|---------|-----------|-----------|
