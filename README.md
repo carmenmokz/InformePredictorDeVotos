@@ -68,6 +68,8 @@ En este caso se utiliza la regularización l1 con una escala menor 0.00001. Al t
 | Segunda ronda     |  0.62   |   0.57    | 0.58      |
 | Basado en primera |  0.67   |   0.58    | 0.59      |
 
+![Sin titulo](images/linealL1-2.PNG)
+
 3) Regularizacion: l1, scale: 0.0000001
 
 Al utilizar una escala aún mpas pequeña, este afectó de nuevo a la segunda ronda basada en la primera, por lo que se puede decir que da un mejor resultado al no utilizar una escala demasiado pequeña o demasiado grande.
@@ -77,6 +79,8 @@ Al utilizar una escala aún mpas pequeña, este afectó de nuevo a la segunda ro
 | Primera ronda     |  0.27   |   0.23    | 0.25      |
 | Segunda ronda     |  0.55   |   0.62    | 0.59      |
 | Basado en primera |  0.6    |   0.59    | 0.58      |
+
+![Sin titulo](images/linealL1-3.PNG)
 
 Con regularización L2::
 
