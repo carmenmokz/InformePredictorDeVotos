@@ -659,7 +659,7 @@ Para el funcionamiento de este programa se necesita instalar los siguientes mód
 
 					pip install -U scikit-learn
 
-**Instalación del simulador de votos**
+**Instalación del Simulador de Votos**
 
 Además de instalar los módulos anteriores, se debe de instalar el simulador de votantes de la siguiente manera:
 
@@ -674,6 +674,44 @@ Además de instalar los módulos anteriores, se debe de instalar el simulador de
 
 Al haber hecho los pasos anteriores se podrá utilizar el simulador de votantes para generar muestras de los votantes de Costa Rica.
 
+**Utilización del Simulador de Votos**
+
+Para la utilización del simulador de votos basta con agregar la siguiente linea de código en un archivo de python.
+
+					from tec.ic.ia.pc1.g06 import (
+													    generar_muestra_pais,
+													    generar_muestra_provincia
+                     								)
+
+**Instalación del Predictor de votos**
+
+Para la instalación del Predictor de votos se debe de abrir la terminal de su sistema operativo y realizar los siguientes pasos:
+
+1. Dirigirse a la carpeta llamada PredictorDeVotaciones en donde se encuentra el archivo llamado "setup.py".
+2. Ingrese los siguientes comandos para la instalación del módulo.
+
+	- Si se desea instalar en Windows, realizar los siguientes pasos:
+		1. Ingresar en la terminal de windows o cmd:
+
+					setup.py install
+
+	    2. Posteriormente se ingresa:
+
+	  				pip install -e .
+
+	- Si se desea instalar en Linux, realizar los siguientes pasos:
+		1. Se necesita poner la terminal en modo "super usuario", para esto se ingresa la siguiente linea de comando:
+
+					sudo su
+
+		2. Una vez que la terminal se encuentra en modo "super usuario", se ingresa el siguiente comando para la instalación del módulo:
+
+		            python setup.py install
+
+		   Si su versión de python es python 3, en lugar del comando anterior, ingresar:
+
+		   			python3 setup.py install
+
 **Utilización del Predictor de Votos**
 
 Para la utilización del Predictor de Votos se deben seguir los siguientes pasos:
@@ -685,7 +723,17 @@ Para la utilización del Predictor de Votos se deben seguir los siguientes pasos
 
 3. Ingresar el siguiente comando:
 
+	- Si se está utilizando Windows:
+
 					main.py
+
+	- Si se está utilizando Linux:
+
+					python main.py
+
+	  Si su versión de python es python 3, en lugar del comando anterior, ingresar:
+
+		   			python3 main.py 
 
 	Este desplegará en pantalla las instrucciones para la utilización del programa. Este se ve de la siguiente manera:
 
