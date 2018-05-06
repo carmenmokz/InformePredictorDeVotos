@@ -1,5 +1,4 @@
 Predictor De Votaciones
-
 =====================
 
 **Estudiantes:** Ximena Bolaños, Micheal Choque, Carmen Mok
