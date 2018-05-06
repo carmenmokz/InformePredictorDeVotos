@@ -381,6 +381,8 @@ Estos son los parametros que por defecto SVM va a manejar con sigmoid, como se p
 | Segunda ronda     | 0.417   | 0.41      | 0.4       |
 | Basado en primera | 0.417   | 0.41      | 0.4       |
 
+![Sin titulo](images/svm7.png)
+
 2) Kernel: sigmoid, C: 1, Gamma: 0.000000001
 
 Se penso que al igual que con rbf, sigmoid mejoraria con un gamma bajo, pero al final se noto que en lugar de mejorar empeoraba. Por lo que se concluye que sigmoid no trabaja bien entre más propiedades tengan los datos.
@@ -390,6 +392,8 @@ Se penso que al igual que con rbf, sigmoid mejoraria con un gamma bajo, pero al 
 | Primera ronda     | 0.783   | 0.806     | 0.803     |
 | Segunda ronda     | 0.433   | 0.489     | 0.485     |
 | Basado en primera | 0.433   | 0.489     | 0.485     |
+
+![Sin titulo](images/svm8.png)
 
 3) Kernel: sigmoid, C: 1, Gamma: auto
 
@@ -401,6 +405,8 @@ A pesar de que mejora con un algritmo para gamma, se nota que el error de entren
 | Segunda ronda     | 0.397   | 0.387     | 0.4       |
 | Basado en primera | 0.397   | 0.387     | 0.4       |
 
+![Sin titulo](images/svm9.png)
+
 4) Kernel: sigmoid, C: 10, Gamma: 1
 
 Una vez más, el error de entrenamiento se mantienen constante sin importar la cantidad de muestras usadas. Con esta muestra se concluye que aun si se quiere tratar de mejorar el error en las muestras de prueba, con sigmoid el error de entrenamiento no variara mucho.
@@ -410,6 +416,8 @@ Una vez más, el error de entrenamiento se mantienen constante sin importar la c
 | Primera ronda     | 0.775   | 0.757     | 0.755     |
 | Segunda ronda     | 0.398   | 0.409     | 0.3937    |
 | Basado en primera | 0.398   | 0.409     | 0.3937    |
+
+![Sin titulo](images/svm10.png)
 
 5) Kernel: sigmoid, C: 10, Gamma: 0.000000001
 
@@ -421,6 +429,8 @@ Se esperaba que al igual que con rbf, sigmoid mostrara buenos resultados con est
 | Segunda ronda     | 0.51    | 0.47      | 0.48      |
 | Basado en primera | 0.51    | 0.47      | 0.48      |
 
+![Sin titulo](images/svm11.png)
+
 6) Kernel: sigmoid, C: 10, Gamma: auto
 
 Una vez más los valores de error de entrenamiento se mantienen constantes con un gamma calculado con una función.
@@ -430,6 +440,8 @@ Una vez más los valores de error de entrenamiento se mantienen constantes con u
 | Primera ronda     | 0.772   | 0.75      | 0.757     |
 | Segunda ronda     | 0.428   | 0.408     | 0.4       |
 | Basado en primera | 0.428   | 0.408     | 0.4       |
+
+![Sin titulo](images/svm12.png)
 
 No se puede dar una conclusión sobre cuales serian los mejores parametros a usara cuando se tiene un kernel sigmoid. Se nota que en algunas de estas pruebas, el error de entrenamiento logra disminuir mas no se puede asegurar que seguira en disminución con el uso de más muestras pues se nota que llega un punto donde los valores se mantienen iguales.
 
