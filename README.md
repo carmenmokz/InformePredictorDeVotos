@@ -128,13 +128,17 @@ Utilizando función de activación Sigmoid:
 
 1) layers: 5, unit_per_layer: [10,15,20,25,27], activation_func: 'sigmoid'
 
+Al utilizar la función de activación sigmoid y 5 capaz más o "hidden layers", podemos ver que las predicciones de las rondas mejoran, pero no hay una mejora significativa entre las 1000 muestras y las 5000 muestras. 
+
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
 | Primera ronda     |  0.15   |   0.23    | 0.25        |
-| Segunda ronda     |  0.50   |   0.56    | 0.59        |
-| Basado en primera |  0.60   |   0.59    | 0.58        |
+| Segunda ronda     |  0.50   |   0.56    | 0.57        |
+| Basado en primera |  0.60   |   0.59    | 0.61        |
 
 1) layers: 10, unit_per_layer: [10,15,20,25,27,30,32,35,45,50], activation_func: 'sigmoid'
+
+Al utilizar un poco más de capas, podemos notar que las predicciones de las rondas mejoras, pero en este caso no hay mucha diferencia en los resultados utilizando 1000 muestras y 5000 muestras.
 
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
@@ -143,6 +147,8 @@ Utilizando función de activación Sigmoid:
 | Basado en primera |  0.55   |   0.58    | 0.62        |
 
 1) layers: 20, unit_per_layer: [5,8,10,10,12,15,20,25,27,30,32,35,45,50,52,55,62,68,90,100], activation_func: 'sigmoid'
+
+Aqui se puede notar que la cantidad de capas afecta, la implementación de más capaz en una red neuronal no siginifica que la predicción va a tener una mejora. Como podemos ver, la segunda ronda basada en la primera obtuvo una predicción mpas baja al utilizar 20 capas a comparación de las muestras anteriores.
 
 |                   |   100   |   1000    |   5000      |
 |-------------------|---------|-----------|-------------|
