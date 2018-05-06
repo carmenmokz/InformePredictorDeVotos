@@ -126,6 +126,9 @@ Al utilizar una escala muy baja como 0.0000001, podemos ver que tampoco hubo una
 
 Podemos decir que lo que más afecta el resultado de la predicción mediante un modelo lineal es la escala que se utiliza en la regularizaciones, ya que sin la aplicación de este, puede no haber una mejora en los resultados.
 
+**Nota:** El error de este modelo puede ser arreglado realizando un cambio en el "optimazer" u "optimizador" que utilizamos y utilizando otro tipo de función de Loss.
+
+
 ### Redes neuronales
 
 **Parametros del modelo**
@@ -225,6 +228,9 @@ Aqui se puede notar podemos ver que hay una mejora en la ronda uno, pero la segu
 ![Sin titulo](images/redTanh3.PNG)
 
 Al comparar el resultado de las muestras utilizando los dos tipos de función e activación, la función Tanh tiene una mejor predicción a comparación con Sigmoid debido a que su rango de mapeo de los valores (Sigmoid = 0 a 1, Tanh = -1 a 1), por lo que se puede decir que estos tienen un gran impacto para la predicción de cada ronda.
+
+**Nota:** El error de este modelo puede ser arreglado realizando un cambio en el "optimazer" u "optimizador" que utilizamos y utilizando otro tipo de función de Loss en el "compile" de la red neuronal.
+
 
 ### Árboles de decisión
 
