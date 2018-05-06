@@ -164,67 +164,80 @@ Se puede observar que la cantidad de capas puede afectar el "accuracy" de la cla
 
 Este modelo solo recibe un parámetro el cual es el threshold. Este se explicará a continuación.
 
-threshold: este especifíca la ganancia de información mínima requerida para realizar una particón.
+threshold: este especifíca la ganancia de información mínima requerida para realizar una poda.Es decir, que si el chi cuadrado tanto de un nodo padre como el del nodo hijo es menor que ese valor, los hijos de ese nodo papá se van a eliminar. 
+
+
 
 **Análisis de resultados**
 
-Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000 y 5000, el cuál se guardará un veinte por ciento para pruebas. Además se utilizará un threshold o umbral de poda de 10, 50 y 100.
+Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000 y 5000, el cuál se guardará un veinte por ciento para pruebas. Además se utilizará un threshold o umbral de poda de 0.01, 0.05 y 3.0.
 
 Cada prueba muestra el error de entrenamiento (ER) promedio del modelo luego de 30 corridas.
 
-Umbral de poda de 10
+Umbral de poda de 0.01 en Generador de Muestras Pais. 
+
+A la hora de realizar la comparación entre lo que fue utilizar Cross Validation y las Pruebas es que con las pruebas hubo un menor porcentaje de ellos a la hora de realizar clasificaciones. Es importante denotar que como la primera ronda tenía mucho ruido en comparacion a las demás, esta siempre va a tener un mayor porcentaje de error. 
 
 1) Cross Validation.
 
-|                   |   100   |   1000    |   5000     |
+|                   |   100   |   1000    |   10000    |
 |-------------------|---------|-----------|------------|
-| Primera ronda     |  0.933  |   0.81    | 0.75       |
-| Segunda ronda     |  0.766  |   0.38    | 0.415      |
-| Basado en primera |  0.766  |   0.38    | 0.415      |
+| Primera ronda     |  0.966  |   0.76    | 0.76       |
+| Segunda ronda     |  0.8    |   0.44    | 0.37       |
+| Basado en primera |  0.8    |   0.44    | 0.37       |
 
 2) Pruebas
 
-|                   |   100   |   1000    |   5000     |
+|                   |   100   |   1000    |   10000    |
 |-------------------|---------|-----------|------------|
-| Primera ronda     |  0.8    |   0.76    | 0.71       |
-| Segunda ronda     |  0.65   |   0.41    | 0.395      |
-| Basado en primera |  0.65   |   0.41    | 0.395      |
+| Primera ronda     |  0.8    |   0.77    | 0.73       |
+| Segunda ronda     |  0.55   |   0.35    | 0.367      |
+| Basado en primera |  0.55   |   0.35    | 0.367      |
 
-Umbral de poda de 50.
+Umbral de poda de 0.05 en Generador de Muestras Pais. 
+
+Con un umbral de 0.05 se pudo denotar que que los porcentajes de perdida con cross validation subieron pero que con las pruebas bajaron en algunos casos, mientras que en otros se mantuvieron. 
 
 1) Cross Validation
 
-|                   |   100   |   1000    |   5000    |
+|                   |   100   |   1000    |   10000   |
 |-------------------|---------|-----------|-----------|
-| Primera ronda     |  0.866  |   0.79    | 0.71      |
-| Segunda ronda     |  1.0    |   0.44    | 0.36      |
-| Basado en primera |  1.0    |   0.44    | 0.36      |
+| Primera ronda     |  0.833  |   0.79    | 0.786     |
+| Segunda ronda     |  0.66   |   0.41    | 0.40      |
+| Basado en primera |  0.66   |   0.41    | 0.40      |
 
 2) Pruebas
 
-|                   |   100   |   1000    |   5000    |
+|                   |   100   |   1000    |   10000   |
 |-------------------|---------|-----------|-----------|
-| Primera ronda     |  0.75   |   0.73    | 0.73      |
-| Segunda ronda     |  1.0    |   0.99    | 0.39      |
-| Basado en primera |  1.0    |   0.99    | 0.39      |
+| Primera ronda     |  0.75   |   0.775   | 0.73      |
+| Segunda ronda     |  0.5    |   0.42    | 0.36      |
+| Basado en primera |  0.5    |   0.42    | 0.36      |
 
-Umbral de poda de 100.
+Umbral de poda de 3.0
+
+Con un umbral de 0.05 se pudo denotar que que los porcentajes realmente subieron en todos los casos tanto de pruebas como de Cross Validation y Pruebas por lo que posiblemente se podo de más del árbol. 
 
 1) Cross Validation
 
-|                   |   100   |   1000    |   5000    |
+|                   |   100   |   1000    |   10000   |
 |-------------------|---------|-----------|-----------|
-| Primera ronda     |  0.9    |   0.78    | 0.73      |
-| Segunda ronda     |  1.0    |   0.43    | 0.99      |
-| Basado en primera |  1.0    |   0.43    | 0.35      |
+| Primera ronda     |  0.93   |   0.82    | 0.76      |
+| Segunda ronda     |  0.66   |   0.43    | 0.37      |
+| Basado en primera |  0.66   |   0.43    | 0.37      |
 
 2) Pruebas
 
-|                   |   100   |   1000    |   5000    |
+|                   |   100   |   1000    |   10000   |
 |-------------------|---------|-----------|-----------|
-| Primera ronda     |  1.0    |   0.73    | 0.73      |
-| Segunda ronda     |  1.0    |   0.98    | 0.99      |
-| Basado en primera |  1.0    |   0.98    | 0.37      |
+| Primera ronda     |  0.75   |   0.77    | 0.74      |
+| Segunda ronda     |  0.55   |   0.47    | 0.38      |
+| Basado en primera |  0.55   |   0.47    | 0.38      |
+
+
+Datos Curiosos:
+
+* Una ves que se probara el árbol en las provicias, se denoto que con 10 000 y con un procentaje de umbral mayor a 0.05 la pérdida si es notable su aumento. 
 
 
 ### KNN
@@ -233,13 +246,15 @@ Umbral de poda de 100.
 
 Este modelo recibe como parámetros el número de vecinos a considerar.
 
-numero: Indica el número de vecinos a considerar para el modelo de "nearest neighbors".
+numero: Indica el número de vecinos a considerar para el modelo de "nearest neighbors", es decir los puntos de menor distancia a el punto seleccionado. 
 
 **Análisis de resultados**
 
-Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000. Se guardará un veinte por ciento de las muestras para la realización de la prueba final. Además de utilizará una cantidad de 10, 20, 50 y 100 vecinos más cercanos. Este retorna el error de entrenamiento
+Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000. Se guardará un veinte por ciento de las muestras para la realización de la prueba final. Además de utilizará una cantidad de 10 y 20 vecinos más cercanos. Este retorna el error de entrenamiento que se mostrará en las siguientes tablas. 
 
-10 vecinos más cercanos
+10 vecinos más cercanos con Generar Muestras País
+
+A la hora de obtener los 10 vecinos más cercanos, se denoto que obtenia un porcentaje de error razonable. Pues como se puede ver estos tienen resultados muy similares a los otros modelos.
 
 1) Cross Validation.
 
@@ -258,7 +273,9 @@ Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000
 | Basado en primera |  0.6    |   0.44    |            
 
 
-20 vecinos más cercanos
+20 vecinos más cercanos con Generar Muestras País
+
+En este caso, se pudo denotar que curiosamente con la primera roneq en cross-validation baja y en la segunda basado con la primera subio. Pero, con las pruebas en ciertos casos sube, mientras que en otros bajan.
 
 1) Cross Validation.
 
@@ -275,6 +292,11 @@ Para el análisis del modelo se pretende utilizar muestras de tamaños 100, 1000
 | Primera ronda     |  0.85   |   0.86    |            
 | Segunda ronda     |  0.35   |   0.52    |            
 | Basado en primera |  0.44   |   0.50    |            
+
+Datos Curiosos:
+- A la hora de seleccionar los vecinos más cercanos pueden cambiar mucho si se utilizan muy pocos como por ejemplo 3 o si se utilizan más de 20. Por lo que el porcentaje de error se puede ver afectado. 
+
+- Este modelo realmente dura mucho a la hora de entrenarse y predecir. Porque a la hora de generarse por cada muestra de entrenamiento va a existir un nodo y entre más nodos mayor es la profundidad del árbol por lo que si hay que tener mucha paciencia. 
 
 ### SVM
 
